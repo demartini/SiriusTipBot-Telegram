@@ -1,0 +1,9 @@
+{
+  "telegram-token": "yout-telegram-token",
+  "telegram-botname": "your-telegram-bot-name",
+  "rpc-uri": "http://127.0.0.1:8332",
+  "rpc-user": "your-username",
+  "rpc-psw": "your-password",
+  "admins": [45527216],
+  "spam_filter": [5, 60]
+}
