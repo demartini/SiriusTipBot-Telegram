@@ -48,8 +48,8 @@ def cmd_start(bot, update, args):
             return
         # Check for deep link
         if len(args) > 0:
-            if args[0].lower() == "about":
-                cmd_about(bot, update)
+            if args[0].lower() == "terms":
+                cmd_terms(bot, update)
             elif args[0].lower() == "help":
                 cmd_help(bot, update)
             elif args[0].lower() == "address":
@@ -66,13 +66,13 @@ def cmd_start(bot, update, args):
                 text=emoji.emojize(strings.get("button_help", _lang), use_aliases=True),
                 callback_data="help",
             )
-            _button_about = InlineKeyboardButton(
+            _button_terms = InlineKeyboardButton(
                 text=emoji.emojize(
-                    strings.get("button_about", _lang), use_aliases=True
+                    strings.get("button_terms", _lang), use_aliases=True
                 ),
-                callback_data="about",
+                callback_data="terms",
             )
-            _markup = InlineKeyboardMarkup([[_button_help, _button_about]])
+            _markup = InlineKeyboardMarkup([[_button_help, _button_terms]])
             update.message.reply_text(
                 emoji.emojize(strings.get("welcome", _lang), use_aliases=True),
                 quote=True,
@@ -82,7 +82,7 @@ def cmd_start(bot, update, args):
             )
 
 
-def cmd_about(bot, update):
+def cmd_terms(bot, update):
     if not _spam_filter.verify(str(update.effective_user.id)):
         return
     if update.effective_chat is None:
@@ -107,7 +107,7 @@ def cmd_about(bot, update):
         _markup = InlineKeyboardMarkup([[_button]])
         bot.send_message(
             chat_id=update.effective_chat.id,
-            text=strings.get("about", _lang),
+            text=strings.get("terms", _lang),
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=_markup,
@@ -115,12 +115,12 @@ def cmd_about(bot, update):
     else:
         # Done: Button (2018-07-18)
         _button = InlineKeyboardButton(
-            text=emoji.emojize(strings.get("button_about", _lang), use_aliases=True),
-            url="https://telegram.me/%s?start=about" % bot.username,
+            text=emoji.emojize(strings.get("button_terms", _lang), use_aliases=True),
+            url="https://telegram.me/%s?start=terms" % bot.username,
         )
         _markup = InlineKeyboardMarkup([[_button]])
         update.message.reply_text(
-            "%s" % strings.get("about_public", _lang),
+            "%s" % strings.get("terms_public", _lang),
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=_markup,
@@ -1176,8 +1176,8 @@ if __name__ == "__main__":
     dispatcher.add_handler(CommandHandler("start", cmd_start, pass_args=True))
     dispatcher.add_handler(CommandHandler("help", cmd_help))
     dispatcher.add_handler(CallbackQueryHandler(callback=cmd_help, pattern=r"^help$"))
-    dispatcher.add_handler(CommandHandler("about", cmd_about))
-    dispatcher.add_handler(CallbackQueryHandler(callback=cmd_about, pattern=r"^about$"))
+    dispatcher.add_handler(CommandHandler("terms", cmd_terms))
+    dispatcher.add_handler(CallbackQueryHandler(callback=cmd_terms, pattern=r"^terms$"))
     # Tipbot commands
     dispatcher.add_handler(CommandHandler("tip", tip, pass_args=True))
     dispatcher.add_handler(CommandHandler("withdraw", withdraw, pass_args=True))

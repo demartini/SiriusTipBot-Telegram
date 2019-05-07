@@ -2,38 +2,34 @@
   "welcome": {
     "en": [
       "Hi! This is a TipBot for Sirius.",
-      "You can use it to share Sirius with your friends."
+      "You can use it to share Sirius in Telegram."
     ]
   },
   "help": {
     "en": [
-      "This bot allows you to receive, store and send Sirius on Telegram.",
+      "This Bot allows you to receive, store and send Sirius on Telegram.",
       "",
-      "To get started, create a deposit address or ask a friend to send you some Sirius.",
-      "Use /deposit or /address _in private_ to know your own address on the bot.",
-      "Then you can send funds to that address the same way as you usually transfer funds with your Sirius Wallet.",
-      "Use /balance _in private_ to know how much Sirius you have got in your account.",
+      "To get started, use /address or /deposit _in private_ to display your Telegram wallet address.",
+      "Useful if you want to receive Sirius directly to your Telegram wallet.",
       "",
-      "Once you have some Sirius, share them with your friends.",
-      "Use `/tip <user> <amount>`",
-      "Make sure to correctly tag your the person you are tipping.",
+      "Use /balance to display the balance of your Telegram wallet.",
       "",
-      "You may share with all the active members of a group!",
-      "Use `/rain <amount> [count]`",
+      "Use `/tip <user> <amount>` to send Sirius to another user.",
+      "Make sure to correctly tag the person you are tipping.",
+      "",
+      "If you want to send Sirius to all active members of a group, use: `/rain <amount> [count]`.",
       "Important: `amount` will be sent to each member, and it will NOT be shared among them.",
       "Make sure to rain more than the minimum amount, and on enough members.",
       "",
-      "Need to withdraw to your Sirius?",
-      "Use `/withdraw <address> <amount>`",
-      "Please double check your address before submitting, as we cannot undo that process.",
+      "To withdraw your balance, use `/withdraw <address> <amount>`",
+      "Please verify your address before submitting, as we can not undo this process.",
       "",
       "",
-      "Need more advanced help and usage tricks?",
-      "Click the button bellow:"
+      "If you need more help click the button below to see the TipBot documentation:"
     ]
   },
   "button_help_advanced_caption": {
-    "en": [":gear: Advanced help."]
+    "en": ["Documentation"]
   },
   "button_help_advanced_url": {
     "en": [
@@ -41,24 +37,25 @@
     ]
   },
   "help_public": {
-    "en": ["You can't ask this in public!", "Please, click the button bellow:"]
+    "en": ["You can't ask this in public!", "Please click the button below:"]
   },
   "button_help": {
-    "en": [":robot_face: HELP"]
+    "en": ["HELP"]
   },
-  "about": {
+  "terms": {
     "en": [
-      "This is a TipBot for Sirius."
+      "There are no fees to use this bot except the automatic daemon fee.",
+      "Under no circumstances the Sirius team. will be held responsible for lost, stolen or misdirected funds."
     ]
   },
-  "about_public": {
-    "en": ["You can't ask this in public !", "Please, click the button bellow:"]
+  "terms_public": {
+    "en": ["You can't ask this in public!", "Please click the button below:"]
   },
   "callback_simple": {
     "en": ["Here you are!"]
   },
-  "button_about": {
-    "en": [":information: ABOUT"]
+  "button_terms": {
+    "en": ["TERMS"]
   },
   "error_bad_deep_link": {
     "en": ["Error. Bad deep link."]
@@ -127,17 +124,17 @@
   },
   "global_paused": {
     "en": [
-      ":pause_button: Sorry, this bot has been paused by the admins. Try again later."
+      "Sorry, this bot has been paused by the admins. Try again later."
     ]
   },
   "pause_answer_paused": {
-    "en": [":pause_button: Paused!"]
+    "en": ["Paused!"]
   },
   "pause_answer_resumed": {
-    "en": [":play_button: Resumed!"]
+    "en": ["Resumed!"]
   },
   "clear_log_done": {
-    "en": [":white_check_mark: Cleared!"]
+    "en": ["Cleared!"]
   },
   "rain_queue_not_initialized": {
     "en": [
