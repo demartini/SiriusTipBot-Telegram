@@ -194,9 +194,9 @@ def msg_no_account(bot, update):
 
 def deposit(bot, update):
     """
-	This commands works only in private.
-	If the user has no address, a new account is created with his Telegram user ID (str)
-	"""
+    This commands works only in private.
+    If the user has no address, a new account is created with his Telegram user ID (str)
+    """
     if update.effective_chat is None:
         _chat_type = "private"
     elif update.effective_chat.type == "private":
@@ -348,10 +348,10 @@ def balance(bot, update):
 # Done: Allow private tipping if the user can be tagged (@username available) (Nothing to add for it to work.)
 def tip(bot, update, args):
     """
-	/tip <user> <amount>
-	/tip u1 u2 u3 ... v1 v2 v3 ...
-	/tip u1 v1 u2 v2 u3 v3 ...
-	"""
+    /tip <user> <amount>
+    /tip u1 u2 u3 ... v1 v2 v3 ...
+    /tip u1 v1 u2 v2 u3 v3 ...
+    """
     if len(args) < 2:
         return  # To avoid the long annoying error message that's shown when users misuse the command
     if not _spam_filter.verify(str(update.effective_user.id)):
@@ -421,13 +421,13 @@ def tip(bot, update, args):
 
 def damp_rock(bot, update):
     """
-	Manages a queue of active users.
-	Activity type is checked before calling this function.
-	Message length should be enforced to avoid spam.
-	:param bot: Bot
-	:param update: Update
-	:return: None
-	"""
+    Manages a queue of active users.
+    Activity type is checked before calling this function.
+    Message length should be enforced to avoid spam.
+    :param bot: Bot
+    :param update: Update
+    :return: None
+    """
     if _paused:
         return
     if update.effective_chat is None:
@@ -509,9 +509,7 @@ def rain(bot, update, args):
             return
         # Prepare arguments
         _rain_amount_demanded = 0
-        _rain_members_demanded = (
-            __rain_queue_max_members
-        )  # number of members = min(optional args[1], queue_max, queue_len)
+        _rain_members_demanded = __rain_queue_max_members  # number of members = min(optional args[1], queue_max, queue_len)
         try:
             _rain_amount_demanded = int(args[0])
             if len(args) > 1:
@@ -586,15 +584,15 @@ def rain(bot, update, args):
 
 def do_tip(bot, update, amounts_float, recipients, handled, verb="tip"):
     """
-	Send amounts to recipients
-	:param bot: Bot
-	:param update: Update
-	:param amounts_float: Array of Float
-	:param recipients: Array of Username or UserID
-	:param handled: Dict of {"username or UserID": (username, entity.offset, entity.length)
-	:param verb: "tip", will be used in "%verb%_success" and "%verb%_missing_recipient" strings
-	:return: None
-	"""
+    Send amounts to recipients
+    :param bot: Bot
+    :param update: Update
+    :param amounts_float: Array of Float
+    :param recipients: Array of Username or UserID
+    :param handled: Dict of {"username or UserID": (username, entity.offset, entity.length)
+    :param verb: "tip", will be used in "%verb%_success" and "%verb%_missing_recipient" strings
+    :return: None
+    """
     #
     if verb not in ["tip", "rain"]:
         log("do_tip", "__system__", "Incorrect verb passed to do_tip()")
@@ -795,8 +793,8 @@ def do_tip(bot, update, amounts_float, recipients, handled, verb="tip"):
 # Done: Revamp withdraw() function (2018-07-16)
 def withdraw(bot, update, args):
     """
-	Withdraw to an address. Works only in private.
-	"""
+    Withdraw to an address. Works only in private.
+    """
     if update.effective_chat is None:
         _chat_type = "private"
     elif update.effective_chat.type == "private":
@@ -1122,8 +1120,8 @@ def convert_to_int(text):
 
 def cmd_send_log(bot, update):
     """
-	Send logs to (admin) user
-	"""
+    Send logs to (admin) user
+    """
     # Note: Don't use emoji in caption
     # Check if admin
     if update.effective_chat.id in config["admins"]:

@@ -27,12 +27,12 @@ class Strings:
 def log(fun, user, message, debug=True):
     # type: (str, str, str, bool) -> None
     """
-	Log in a CSV file
-	Header is:
-	"time", "command", "user_id", "message"
-	Time is in local-time
-	:rtype: None
-	"""
+    Log in a CSV file
+    Header is:
+    "time", "command", "user_id", "message"
+    Time is in local-time
+    :rtype: None
+    """
     _log = (
         datetime.fromtimestamp(time.time()).strftime("%Y-%m-%d %H:%M:%S")
         + ","

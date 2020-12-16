@@ -32,9 +32,7 @@
     "en": ["Documentation"]
   },
   "button_help_advanced_url": {
-    "en": [
-      "https://docs.getsirius.io/docs/faq/tipbot-telegram"
-    ]
+    "en": ["https://docs.getsirius.io/docs/faq/tipbot-telegram"]
   },
   "help_public": {
     "en": ["You can't ask this in public!", "Please click the button below:"]
@@ -123,9 +121,7 @@
     ]
   },
   "global_paused": {
-    "en": [
-      "Sorry, this bot has been paused by the admins. Try again later."
-    ]
+    "en": ["Sorry, this bot has been paused by the admins. Try again later."]
   },
   "pause_answer_paused": {
     "en": ["Paused!"]
